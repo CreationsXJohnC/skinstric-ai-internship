@@ -12,6 +12,13 @@ code {
     monospace;
 } */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,900;1,14..32,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *, ::backdrop, :after, :before {
   box-sizing: border-box;
   border: 0 solid;
@@ -20,7 +27,6 @@ code {
 }
 
 .main__intro__page {
-  font-family: roobert, roobert Fallback;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   color: #1a1b1c;
@@ -34,8 +40,6 @@ code {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding-block: calc(var(--spacing) * 3);
-  margin-bottom: calc(var(--spacing) * 3);
   z-index: 1000;
   position: relative;
 }
@@ -77,20 +81,20 @@ code {
   margin-right: calc(var(--spacing) * 2);
   z-index: 1000;
   font-size: 14px;
+  font-weight: 600;
+  font-family: "roboto";
   margin: 0px 8px 0px 0px;
   padding: 8px 16px;
 }
 
 .navbar__left--page-name {
   font-size: 14px;
+  font-family: "roboto";
+  font-weight: 600;
   color: #1a1b1c83;
-  margin: 0px 6px;
-  margin-right: calc(var(--spacing) * 1.5);
-  margin-left: calc(var(--spacing) * 1.5);
-  font-size: var(--text-sm);
+  margin: 0px 2px;
   line-height: var(--tw-leading, var(--text-sm--line-height));
   --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
 }
 
 .navbar__left--img {
@@ -99,9 +103,10 @@ code {
   max-width: 100%;
   display: block;
   color: transparent;
+  margin: 0px 4px;
 }
 
-.navbar__enter-code {
+/* .navbar__enter-code {
   font-size: 10px;
   background-color: #1a1b1c;
   color: #fcfcfc;
@@ -120,4 +125,5 @@ code {
   --tw-leading: 16px;
   line-height: 16px;
   white-space: nowrap;
-}
+} */
+
