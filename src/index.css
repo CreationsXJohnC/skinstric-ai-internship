@@ -18,3 +18,106 @@ code {
   margin: 0;
   padding: 0;
 }
+
+.main__intro__page {
+  font-family: roobert, roobert Fallback;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  color: #1a1b1c;
+}
+
+.nav__row {
+  height: 64px;
+  margin: 0px 0px 12px;
+  padding: 12px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 3);
+  z-index: 1000;
+  position: relative;
+}
+
+.navbar__left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--spacing) * 1);
+  --tw-scale-x: 75%;
+  --tw-scale-y: 75%;
+  --tw-scale-z: 75%;
+  scale: var(--tw-scale-x) var(--tw-scale-y);
+  padding: 4px 0px 0px;
+}
+
+.navbar__left--name {
+  text-decoration: none;
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  color: #1a1b1c;
+  white-space: nowrap;
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  --tw-leading: 16px;
+  line-height: 16px;
+  font-size: var(--text-sm);
+  padding-block: calc(var(--spacing) * 2);
+  padding-inline: calc(var(--spacing) * 4);
+  border-radius: var(--radius-md);
+  gap: calc(var(--spacing) * 2);
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--spacing) * 9);
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  margin-right: calc(var(--spacing) * 2);
+  z-index: 1000;
+  font-size: 14px;
+  margin: 0px 8px 0px 0px;
+  padding: 8px 16px;
+}
+
+.navbar__left--page-name {
+  font-size: 14px;
+  color: #1a1b1c83;
+  margin: 0px 6px;
+  margin-right: calc(var(--spacing) * 1.5);
+  margin-left: calc(var(--spacing) * 1.5);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+}
+
+.navbar__left--img {
+  width: 4px;
+  height: 17px;
+  max-width: 100%;
+  display: block;
+  color: transparent;
+}
+
+.navbar__enter-code {
+  font-size: 10px;
+  background-color: #1a1b1c;
+  color: #fcfcfc;
+  margin: 0px 16px;
+  padding: 8px 16px;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  letter-spacing: inherit;
+  opacity: 1;
+  border-radius: 0;
+  appearance: button;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  scale: .8;
+  --tw-leading: 16px;
+  line-height: 16px;
+  white-space: nowrap;
+}

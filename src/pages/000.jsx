@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LeftBracket from "../assets/Rectangle 2710.webp"
+import RightBracket from "../assets/Rectangle 2711.webp"
 
 
 const Page1 = () => {
@@ -8,15 +10,17 @@ const Page1 = () => {
     }, []);
 
     return (
-        <div className="main__intro__page">
-            <div className="row">
-                <Link className="navbar__left--name" to="/">SKINSTRIC</Link>
-                <img className="navbar__left" src="" alt="" />
-                <p className="navbar__left--page-name">INTRO</p>
-                <img className="navbar__left" src="" alt="" />
+        <body className="main__intro__page">
+            <div className="nav__row">
+                <div className="navbar__left">
+                    <Link className="navbar__left--name" to="/">SKINSTRIC</Link>
+                    <img className="navbar__left--img" src={LeftBracket} alt="" />
+                    <p className="navbar__left--page-name">INTRO</p>
+                    <img className="navbar__left--img" src={RightBracket} alt="" />
+                </div>
                 <button className="navbar__enter-code">ENTER CODE</button>
             </div>
-        </div>
+        </body>
 
     );
 };
