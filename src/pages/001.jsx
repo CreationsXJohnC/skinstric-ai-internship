@@ -10,7 +10,7 @@ const Page2 = () => {
     }, []);
 
     return (
-        <body className="main__intro__page">
+        <div className="main__intro__page">
             <div className="nav__row">
                 <div className="navbar__left">
                     <Link className="navbar__left--name" to="/">SKINSTRIC</Link>
@@ -20,7 +20,7 @@ const Page2 = () => {
                 </div>
                 <button className="navbar__enter-code">ENTER CODE</button>
             </div>
-        </body>
+        </div>
 
     );
 };
