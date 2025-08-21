@@ -29,7 +29,7 @@ const Page4 = () => {
                 </div>
                 <div className="relative flex flex-col items-center justify-center mb-40 w-full h-full">
                     <p className="text-sm text-gray-400 tracking-wider uppercase mb-1">CLICK TO TYPE</p>
-                    <form action="javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')" className="relative z-10">
+                    <form className="relative z-10">
                         <div className="flex flex-col items-center"></div>
                         <input className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Your City Name" autoComplete="off" type="text" name="name" />
                         <button type="submit" className="sr-only">Submit</button>
@@ -48,6 +48,20 @@ const Page4 = () => {
                                 <Link to="/page3" className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></Link>
                                 <span className="absolute left-[15px] bottom-[13px] scale-[0.9] rotate-180 hidden sm:block group-hover:scale-[0.92] ease duration-300"></span>
                                 <span className="text-sm font-semibold hidden sm:block ml-6">BACK</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a className="inline-block" href="/page4/result">
+                        <div className="invisible" style="position: relative;translate: none;rotate: none;scale: none;visibility: visible;opacity: 1;transform: translate(0px, 0%);" >
+                            <div>
+                                <div className=" w-12 h-12 felx items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
+                                    <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">PROCEED</span>
+                                </div>
+                                <div className="group hidden sm:flex flex-row relative justify-center items-center">
+                                    <span className="text-sm font-semibold hidden sm:block mr-5">PROCEED</span>
+                                    <div className=" w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></div>
+                                    <span className="absolute right-[15px] bottom-[13px] scale-[0.9] hidden sm:block group-hover:scale-[0.92] ease duration-300"></span>
+                                </div>
                             </div>
                         </div>
                     </a>
