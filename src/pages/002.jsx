@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import LeftBracket from "../assets/Rectangle 2710.webp"
 import RightBracket from "../assets/Rectangle 2711.webp"
+import DiamondLarge from "../assets/Diamond-light-large.webp"
+import DiamondMedium from "../assets/Diamond-medium-medium.webp"
+import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
 const Page3 = () => {
@@ -29,8 +32,25 @@ const Page3 = () => {
                     <form action="javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')" className="relative z-10">
                         <div className="flex flex-col items-center"></div>
                         <input className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Introduce Yourself" autoComplete="off" type="text" name="name" />
-                        <button type="submit" className="sr-only">Submit</button>
+                        <Link to="/page4"> <button type="submit" className="sr-only">Submit</button> </Link>
                     </form>
+                    <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
+                    <img alt="Diamond Medium" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[400px] h-[400px] md:w-[682px] md:h-[682px] animate-spin-slower rotate-185 color:transparent" src={DiamondMedium} />
+                    <img alt="Diamond Small" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[320px] h-[320px] md:w-[602px] md:h-[602px] animate-spin-slowest color:transparent" src={DiamondSmall} />
+                </div>
+                <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
+                    <a className="inset-0" aria-label="Back" href="/">
+                        <div>
+                            <div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
+                                <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">BACK</span>
+                            </div>
+                            <div className="group hidden sm:flex flex-row relative justify-center items-center">
+                                <div className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></div>
+                                <span className="absolute left-[15px] bottom-[13px] scale-[0.9] rotate-180 hidden sm:block group-hover:scale-[0.92] ease duration-300"></span>
+                                <span className="text-sm font-semibold hidden sm:block ml-6">BACK</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
