@@ -127,3 +127,20 @@ code {
   white-space: nowrap;
 } */
 
+.animate-spin-slow {
+  animation: spin 50s linear infinite;
+}
+
+.animate-spin-slower {
+  animation: spin 70s linear infinite;
+}
+
+.animate-spin-slowest {
+  animation: spin 85s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
