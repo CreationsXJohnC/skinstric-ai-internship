@@ -34,9 +34,9 @@ const Page3 = () => {
                         <input className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Introduce Yourself" autoComplete="off" type="text" name="name" />
                         <Link to="/page4"> <button type="submit" className="sr-only">Submit</button> </Link>
                     </form>
-                    <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
-                    <img alt="Diamond Medium" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[400px] h-[400px] md:w-[682px] md:h-[682px] animate-spin-slower rotate-185 color:transparent" src={DiamondMedium} />
-                    <img alt="Diamond Small" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[320px] h-[320px] md:w-[602px] md:h-[602px] animate-spin-slowest color:transparent" src={DiamondSmall} />
+                    <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
+                    <img alt="Diamond Medium" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 w-[400px] h-[400px] md:w-[682px] md:h-[682px] animate-spin-slower rotate-185 color:transparent" src={DiamondMedium} />
+                    <img alt="Diamond Small" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 w-[320px] h-[320px] md:w-[602px] md:h-[602px] animate-spin-slowest color:transparent" src={DiamondSmall} />
                 </div>
                 <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
                     <a className="inset-0" aria-label="Back" href="/">
