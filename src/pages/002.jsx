@@ -7,7 +7,7 @@ import DiamondMedium from "../assets/Diamond-medium-medium.webp"
 import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
-const Page3 = () => {
+const Page2 = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -29,14 +29,14 @@ const Page3 = () => {
                 </div>
                 <div className="relative flex flex-col items-center justify-center mb-40 w-full h-full">
                     <p className="text-sm text-gray-400 tracking-wider uppercase mb-1">CLICK TO TYPE</p>
-                    <form action="javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')" className="relative z-10">
+                    <form className="relative z-10">
                         <div className="flex flex-col items-center"></div>
                         <input className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Introduce Yourself" autoComplete="off" type="text" name="name" />
-                        <Link to="/page4"> <button type="submit" className="sr-only">Submit</button> </Link>
+                        <Link to="/page3"> <button type="submit" className="sr-only">Submit</button> </Link>
                     </form>
-                    <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
-                    <img alt="Diamond Medium" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 w-[400px] h-[400px] md:w-[682px] md:h-[682px] animate-spin-slower rotate-185 color:transparent" src={DiamondMedium} />
-                    <img alt="Diamond Small" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 w-[320px] h-[320px] md:w-[602px] md:h-[602px] animate-spin-slowest color:transparent" src={DiamondSmall} />
+                    <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
+                    <img alt="Diamond Medium" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[400px] h-[400px] md:w-[682px] md:h-[682px] animate-spin-slower rotate-185 color:transparent" src={DiamondMedium} />
+                    <img alt="Diamond Small" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[320px] h-[320px] md:w-[602px] md:h-[602px] animate-spin-slowest color:transparent" src={DiamondSmall} />
                 </div>
                 <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
                     <a className="inset-0" aria-label="Back" href="/">
@@ -57,4 +57,4 @@ const Page3 = () => {
     );
 };
 
-export default Page3;
+export default Page2;

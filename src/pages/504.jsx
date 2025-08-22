@@ -7,7 +7,7 @@ import DiamondMedium from "../assets/Diamond-medium-medium.webp"
 import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
-const Page4 = () => {
+const Page3 = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -34,9 +34,9 @@ const Page4 = () => {
                         <input className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Your City Name" autoComplete="off" type="text" name="name" />
                         <button type="submit" className="sr-only">Submit</button>
                     </form>
-                    <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
-                    <img alt="Diamond Medium" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[400px] h-[400px] md:w-[682px] md:h-[682px] animate-spin-slower rotate-185 color:transparent" src={DiamondMedium} />
-                    <img alt="Diamond Small" loading="lazy" decoding="async" data-nimg="1" className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-1/2 w-[320px] h-[320px] md:w-[602px] md:h-[602px] animate-spin-slowest color:transparent" src={DiamondSmall} />
+                    <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
+                    <img alt="Diamond Medium" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[400px] h-[400px] md:w-[682px] md:h-[682px] animate-spin-slower rotate-185 color:transparent" src={DiamondMedium} />
+                    <img alt="Diamond Small" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[320px] h-[320px] md:w-[602px] md:h-[602px] animate-spin-slowest color:transparent" src={DiamondSmall} />
                 </div>
                 <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
                     <a className="inset-0" aria-label="Back" href="/">
@@ -51,7 +51,7 @@ const Page4 = () => {
                             </div>
                         </div>
                     </a>
-                    <a className="inline-block" href="/page4/result">
+                    <a className="inline-block" href="/page4">
                         <div className="invisible" style={{position: "relative",translate: "none",rotate: "none",scale: "none",visibility: "visible",opacity: 1,transform: "translate(0px, 0%)"}} >
                             <div>
                                 <div className=" w-12 h-12 felx items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
@@ -71,4 +71,4 @@ const Page4 = () => {
     );
 };
 
-export default Page4;
+export default Page3;

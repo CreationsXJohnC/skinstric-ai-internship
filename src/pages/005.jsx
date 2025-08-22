@@ -11,7 +11,7 @@ import GalleryIcon from "../assets/gallery-icon.webp"
 import ResGalleryLine from "../assets/ResGalleryLine.webp"
 
 
-const Page6 = () => {
+const Page4 = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -38,7 +38,7 @@ const Page6 = () => {
                         <img alt="DiamondMedium" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute w-[230px] h-[230px] md:w-[444.34px] md:h-[444.34px] animate-spin-slower rotate-190" src={SquareMedium} />
                         <img alt="DiamondSmall" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute w-[190px] h-[190px] md:w-[405.18px] md:h-[405.18px] animate-spin-slowest" src={SquareSmall} />
                         <div className="absolute insert-0 flex flex-col items-center justify-center">
-                            <img alt="CameraIcon" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute w-[100px] h-[100px] md:w-[136px] md:h-[136px] hover:scale-108 duration-700 ease-in-out cursor-pointer" src={CameraIcon} />
+                            <img alt="CameraIcon" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="w-[100px] h-[100px] md:w-[136px] md:h-[136px] hover:scale-108 duration-700 ease-in-out cursor-pointer" src={CameraIcon} />
                             <div className="absolute bottom-[1%] right-[90px] md:top-[30.9%] md:right-[-12px] translate-y-[-20px]">
                                 <p className="text-xs md:text-sm font-normal mt-1 leading-[24px]">
                                     ALLOW A.I. <br /> TO SCAN YOUR FACE 
@@ -104,4 +104,4 @@ const Page6 = () => {
     );
 };
 
-export default Page6;
+export default Page4;
