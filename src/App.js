@@ -4,6 +4,7 @@ import Page2 from "./pages/002";
 import Page3 from "./pages/504";
 import Page4 from "./pages/005";
 import Page5 from "./pages/012";
+import Page6 from "./pages/013";
 
 
 
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/page3" element={<Page3 />} />
                 <Route path="/page4" element={<Page4 />} />
                 <Route path="/page5" element={<Page5 />} />
+                <Route path="/page6" element={<Page6 />} />
             </Routes>
         </Router>
     );
