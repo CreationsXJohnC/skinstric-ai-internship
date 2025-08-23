@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import LeftBracket from "../assets/Rectangle 2710.webp"
 import RightBracket from "../assets/Rectangle 2711.webp"
+import RadioButton from "../assets/radioButton.webp"
 
 
 const Page6 = () => {
@@ -58,7 +59,105 @@ const Page6 = () => {
                                 </div>
                                 <p className="md:absolute text-xs text-[#A0A4AB] md:text-sm lg:text-base font-normal mb-1 leading-[24px] md:bottom-[-15%] md:left-[22%] ld:left-[30%] xl:left-[40%] 2xl:left-[45%]">If A.I. estimate us wrong, select the correct one.</p>
                             </div>
-                            
+                            <div className="bg-gray-100 pt-4 pb-4 md:border-t">
+                                <div className="space-y-0">
+                                    <div className="flex justify-between px-4">
+                                        <h4 className="text-base leading-[24px] tracking-tight font-medium mb-2">AGE</h4>
+                                        <h4 className="text-base leading-[24px] tracking-tight font-medium mb-2">A.I. CONFIDENCE</h4>
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">0-2</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 -tracking-tight">4%</span>
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">3-9</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 tracking-tight">3%</span> 
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">10-19</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 tracking-tight">13%</span> 
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">20-29</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 tracking-tight">4%</span> 
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer bg-[#1A1B1C] text-white">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">30-39</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 tracking-tight">0%</span> 
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">40-49</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 tracking-tight">0%</span> 
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">50-59</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 tracking-tight">1%</span> 
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">60-69</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 tracking-tight">70%</span> 
+                                    </div>
+                                    <div className="flex items-center justify-between h-[48px] hover:bg-[#E1E1E2] px-4 cursor-pointer">
+                                        <div className="flex items-center gap-1">
+                                            <img alt="radio button" loading="lazy" decoding="async" data-nimg="1" className="w-[12px] h-[12px] mr-2" style={{color: "transparent"}} src={RadioButton} />
+                                            <span className="font-normal text-base leading-6 tracking-tight">70+</span>
+                                        </div>
+                                        <span className="font-normal text-base leading-6 tracking-tight">1%</span> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="pt-4 md:pt-[37px] pb-6 bg-white sticky bottom-40 md:static md:bottom-0 mb-8 md:mb-16">
+                            <div className="flex justify-between max-w-full mx-auto px-4 md:px-0">
+                                <a href="/select">
+                                    <div>
+                                        <div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
+                                            <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">BACK</span>
+                                        </div>
+                                        <div className="group hidden sm:flex flex-row relative justify-center items-center">
+                                            <div className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></div>
+                                            <span className="absolute left-[15px] bottom-[13px] scale-[0.9] rotate-180 hidden sm:block group-hover:scale-[0.92] ease duration-300"></span>
+                                            <span className="text-sm font-semibold hidden sm:block ml-6">BACK</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/">
+                                    <div>
+                                        <div className="w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
+                                            <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">HOME</span>
+                                        </div>
+                                        <div className="hidden sm:flex flex-row relative justify-center items-center">
+                                            <span className="text-sm font-semibold hidden sm:block mr-5">HOME</span>
+                                            <div className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85]"></div>
+                                            <span className="absolute right-[15px] bottom-[13px] scale-[0.9] hidden sm:block"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </main>
