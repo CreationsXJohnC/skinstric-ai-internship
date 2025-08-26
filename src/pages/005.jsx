@@ -43,7 +43,7 @@ const Page4 = () => {
                                 <p className="text-xs md:text-sm font-normal mt-1 leading-[24px]">
                                     ALLOW A.I. <br /> TO SCAN YOUR FACE 
                                 </p>
-                                <img alt="Scan Line" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute hidden w-[66px] h-[59px] md:block md:right-[143px] md:top-[20px]" src={ResScanLine} />
+                                <img alt="Scan Line" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute hidden w-[66px] h-[59px] md:block md:right-[-30px] md:top-[-50px]" src={ResScanLine} />
                             </div>
                         </div>
                     </div>
