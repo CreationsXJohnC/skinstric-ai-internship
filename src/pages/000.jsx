@@ -58,7 +58,7 @@ const Page1 = () => {
                             <div className="[@media(width<=1023px)]:hidden w-full h-full border border-dotted border-[#A0A4AB] rotate-45 fixed inset-0" src={LeftBorder}></div>
                             <button id="discover-button" onMouseEnter={() => setIssHovering(true)} onMouseLeave={() => setIssHovering(false)} className="[@media(width<=1023px)]:hidden group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md text-sm font-normal text-[#1A1B1C] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer disabled:opacity-50 h-9 absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/5 xl:translate-x-1/6 [@media(width>=1920px)]:translate-x-1/20 px-3 py-1" src={DisButton}>
                                 <div className="w-[30px] h-[30px] border border-solid border-black rotate-45 cursor-pointer group-hover:scale-110 duration-300"></div>
-                                <span className="absolute left-[18px] top-[8px] scale-[0.9] rotate-180 group-hover:scale-105 duration-300"></span>
+                                <span className="absolute left-[20px] top-[8px] scale-[0.9] rotate-180 group-hover:scale-105 duration-300">▶</span>
                                 <span>DISCOVER A.I.</span>
                             </button>
                         </div>
@@ -70,7 +70,7 @@ const Page1 = () => {
                                 <Link id="task-test-button" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} className="group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md text-sm font-normal text-[#1A1B1C] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer disabled:opacity-50 h-9 absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/5 xl:-translate-x-1/6 [@media(width>=1920px)]:-translate-x-1/20 px-3 py-1" to="/page2">
                                 TAKE TEST
                                 <div className="w-[30px] h-[30px] border border-solid border-black rotate-45 group-hover:scale-110 duration-300"></div>
-                                <span className="absolute left-[107px] top-[9px] scale-[0.9] cursor-pointer group-hover:scale-105 duration-300"></span>
+                                <span className="absolute left-[111px] top-[9px] scale-[0.9] cursor-pointer group-hover:scale-105 duration-300">▶</span>
                                 </Link>
                             </div>
                         </div>

@@ -48,7 +48,7 @@ const Page5 = () => {
                         </div>
                         <div className="relative z-10 grid grid-cols-3 grid-rows-3 gap-0">
                             <div className="flex items-center justify-center col-start-2">
-                                <a href="/summary">
+                                <a href="/page6">
                                     <button className="w-[153.88px] h-[153.88px] bg-gray-200 hover:bg-gray-300 transform rotate-45 flex items-center justify-center -m-5 cursor-pointer font-semibold leading-[24px] tracking-tight uppercase hover:scale-[1.05] transition-transform duration-300">
                                         <span className="transform -rotate-45">Demographics</span>
                                     </button>
@@ -74,19 +74,19 @@ const Page5 = () => {
                 </div>
                 <div className="pt-4 md:pt-12 pb-8 bg-white sticky md:static bottom-40 mb-0 md:mb-0">
                     <div className="flex justify-between max-w-full mx-auto px-13 md:px-9">
-                        <a href="/result">
+                        <a href="/page4">
                             <div>
                                 <div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
                                     <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">BACK</span>
                                 </div>
                                 <div className="group hidden sm:flex flex-row relative justify-center items-center">
                                     <div className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></div>
-                                    <span className="absolute left-[15px] bottom-[13px] scale-[0.9] rotate-180 hidden sm:block group-hover:scale-[0.92] ease duration-300"></span>
-                                    <span className="text-sm font-semibold hidden sm:lock ml-6">BACK</span>
+                                    <span className="absolute left-[16px] bottom-[11px] scale-[1] rotate-180 hidden sm:block group-hover:scale-[0.92] ease duration-300">▶</span>
+                                    <span className="text-sm font-semibold sm:lock ml-6">BACK</span>
                                 </div>
                             </div>
                         </a>
-                        <a href="/summary">
+                        <a href="/page6">
                             <div>
                                 <div className="w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
                                     <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">SUM</span>
@@ -94,7 +94,7 @@ const Page5 = () => {
                                 <div className="group hidden sm:flex flex-row relative justify-center items-center">
                                     <span className="text-sm font-semibold hidden sm:block mr-5">GET SUMMARY</span>
                                     <div className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></div>
-                                    <span className="absolute right-[15px] bottom-[13px] scale-[0.9] hidden sm:block group-hover:scale-[0.92] ease duration-300"></span>
+                                    <span className="absolute right-[16px] bottom-[11px] scale-[1] hidden sm:block group-hover:scale-[0.92] ease duration-300">▶</span>
                                 </div>
                             </div>
                         </a>
