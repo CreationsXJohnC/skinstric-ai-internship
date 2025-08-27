@@ -5,7 +5,7 @@ import RightBracket from "../assets/Rectangle 2711.webp"
 import RadioButton from "../assets/radioButton.webp"
 
 
-const Page6 = () => {
+const Results = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -167,4 +167,4 @@ const Page6 = () => {
     );
 };
 
-export default Page6;
+export default Results;

@@ -5,7 +5,7 @@ import RightBracket from "../assets/Rectangle 2711.webp"
 import LeftBorder from "../assets/Rectangle 2779.svg"
 import DisButton from "../assets/button-icon-text-shrunk.svg"
 
-const Page1 = () => {
+const Intro = () => {
     const [isHovering, setIsHovering] = useState(false);
     const [issHovering, setIssHovering] = useState(false);
     const [isVisible, setIsVisible] = useState(false)
@@ -134,7 +134,7 @@ const Page1 = () => {
                   id="task-test-button"
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
-                  to="/page2"
+                  to="/name"
                   className="group inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md text-sm font-normal text-[#1A1B1C] cursor-pointer h-9 absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/5 px-3 py-1 transition-transform duration-300"
                 >
                   TAKE TEST
@@ -150,4 +150,4 @@ const Page1 = () => {
     );
   };
   
-  export default Page1;
+  export default Intro;

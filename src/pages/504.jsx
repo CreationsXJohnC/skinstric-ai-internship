@@ -7,7 +7,7 @@ import DiamondMedium from "../assets/Diamond-medium-medium.webp"
 import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
-const Page3 = () => {
+const City = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -32,7 +32,7 @@ const Page3 = () => {
                     <form className="relative z-10">
                         <div className="flex flex-col items-center"></div>
                         <input className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Your City Name" autoComplete="off" type="text" name="name" />
-                        <button type="submit" className="sr-only">Submit</button>
+                        <Link to="/image"><button type="submit" className="sr-only">Submit</button></Link>
                     </form>
                     <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
                     <img alt="Diamond Medium" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[400px] h-[400px] md:w-[682px] md:h-[682px] animate-spin-slower rotate-185 color:transparent" src={DiamondMedium} />
@@ -45,13 +45,13 @@ const Page3 = () => {
                                 <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">BACK</span>
                             </div>
                             <div className="group hidden sm:flex flex-row relative justify-center items-center">
-                                <Link to="/page3" className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></Link>
+                                <Link to="/name" className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></Link>
                                 <span className="absolute left-[16px] bottom-[11px] scale-[1] rotate-180 hidden sm:block group-hover:scale-[0.92] ease duration-300">▶</span>
                                 <span className="text-sm font-semibold hidden sm:block ml-6">BACK</span>
                             </div>
                         </div>
                     </a>
-                    <a className="inline-block" href="/page4">
+                    <a className="inline-block" href="/image">
                         <div className="invisible" style={{position: "relative",translate: "none",rotate: "none",scale: "none",visibility: "visible",opacity: 1,transform: "translate(0px, 0%)"}} >
                             <div>
                                 <div className=" w-12 h-12 felx items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
@@ -71,4 +71,4 @@ const Page3 = () => {
     );
 };
 
-export default Page3;
+export default City;

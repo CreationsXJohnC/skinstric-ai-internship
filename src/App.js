@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Page1 from "./pages/000";
-import Page2 from "./pages/002";
-import Page3 from "./pages/504";
-import Page4 from "./pages/005";
-import Page5 from "./pages/012";
-import Page6 from "./pages/013";
+import Intro from "./pages/000";
+import Name from "./pages/002";
+import City from "./pages/504";
+import Image from "./pages/005";
+import LoadingPic from "./pages/001";
+import Camera from "./pages/006";
+import Demographics from "./pages/012";
+import Results from "./pages/013";
 
 
 
@@ -13,12 +15,14 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Page1 />} />
-                <Route path="/page2" element={<Page2 />} />
-                <Route path="/page3" element={<Page3 />} />
-                <Route path="/page4" element={<Page4 />} />
-                <Route path="/page5" element={<Page5 />} />
-                <Route path="/page6" element={<Page6 />} />
+                <Route path="/" element={<Intro />} />
+                <Route path="/name" element={<Name />} />
+                <Route path="/city" element={<City />} />
+                <Route path="/image" element={<Image />} />
+                <Route path="/loadingpic" element={<LoadingPic />} />
+                <Route path="/camera" element={<Camera />} />
+                <Route path="/demographics" element={<Demographics />} />
+                <Route path="/results" element={<Results />} />
             </Routes>
         </Router>
     );

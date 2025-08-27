@@ -6,7 +6,7 @@ import DiamondLarge from "../assets/Diamond-light-large.webp"
 import DiamondMedium from "../assets/Diamond-medium-medium.webp"
 import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
-const Page5 = () => {
+const Demographics = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -48,7 +48,7 @@ const Page5 = () => {
                         </div>
                         <div className="relative z-10 grid grid-cols-3 grid-rows-3 gap-0">
                             <div className="flex items-center justify-center col-start-2">
-                                <a href="/page6">
+                                <a href="/results">
                                     <button className="w-[153.88px] h-[153.88px] bg-gray-200 hover:bg-gray-300 transform rotate-45 flex items-center justify-center -m-5 cursor-pointer font-semibold leading-[24px] tracking-tight uppercase hover:scale-[1.05] transition-transform duration-300">
                                         <span className="transform -rotate-45">Demographics</span>
                                     </button>
@@ -106,4 +106,4 @@ const Page5 = () => {
     );
 };
 
-export default Page5;
+export default Demographics;

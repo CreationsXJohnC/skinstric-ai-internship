@@ -11,7 +11,10 @@ import GalleryIcon from "../assets/gallery-icon.webp"
 import ResGalleryLine from "../assets/ResGalleryLine.webp"
 
 
-const Page4 = () => {
+const Image = () => {
+    const [cameraPopUp, setCameraPopUp] = useState(false)
+
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -38,22 +41,13 @@ const Page4 = () => {
                         <img alt="DiamondMedium" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute w-[230px] h-[230px] md:w-[444.34px] md:h-[444.34px] animate-spin-slower rotate-190" src={SquareMedium} />
                         <img alt="DiamondSmall" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute w-[190px] h-[190px] md:w-[405.18px] md:h-[405.18px] animate-spin-slowest" src={SquareSmall} />
                         <div className="absolute insert-0 flex flex-col items-center justify-center">
-                            <img alt="CameraIcon" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="w-[100px] h-[100px] md:w-[136px] md:h-[136px] hover:scale-108 duration-700 ease-in-out cursor-pointer" src={CameraIcon} />
+                            <img alt="CameraIcon" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="w-[100px] h-[100px] md:w-[136px] md:h-[136px] hover:scale-108 duration-700 ease-in-out cursor-pointer" src={CameraIcon} onClick={() => setCameraPopUp(true)}/>
                             <div className="absolute bottom-[1%] right-[90px] md:top-[-25%] md:right-[-180px] translate-y-[-20px]">
                                 <p className="text-xs md:text-sm font-normal mt-1 leading-[24px]">
                                     ALLOW A.I. <br /> TO SCAN YOUR FACE 
                                 </p>
                             </div>
                                 <img alt="Scan Line" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute hidden w-[66px] h-[59px] md:block md:right-[-35px] md:top-[-33px]" src={ResScanLine} />
-                        </div>
-                        <div className="absolute md:top-[43%] md:left-[360px] w-[352px] z-50">
-                            <div className="bg-[#1A1B1C] pt-4 pb-2">
-                                <h2 className="text-[#FCFCFC] text-base font-semibold mb-12 leading-[24px] pl-4">ALLOW A.I. TO ACCESS YOUR CAMERA</h2>
-                                <div className="flex mt-4 border-t border-[#FCFCFC] pt-2">
-                                    <button className="px-7 md:translate-x-45 text-[#fcfcfca1] font-normal text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-500">DENY</button>
-                                    <button className="px-5 md:translate-x-45 text-[#fcfcfca1] font-normal text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-300">ALLOW</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div className="relative md:absolute md:left-[45%] lg:left-[50%] xl:left-[55%] flex flex-col items-center mt-12 md:mt-0 justify-center md:-translate-y-[0%] -translate-y-[10%] transition-opacity duration-300 opacity-100">
@@ -77,9 +71,18 @@ const Page4 = () => {
                     </div>
                     <input accept="image/*" className="hidden" type="file" />
                 </div>
+                <div className={`absolute md:top-[43%] md:left-[500px] w-[352px] z-50 ${cameraPopUp ? "block" : "hidden"}`}>
+                            <div className="bg-[#1A1B1C] pt-4 pb-2">
+                                <h2 className="text-[#FCFCFC] text-base font-semibold mb-12 leading-[24px] pl-4">ALLOW A.I. TO ACCESS YOUR CAMERA</h2>
+                                <div className="flex mt-4 border-t border-[#FCFCFC] pt-2">
+                                    <button className={`px-7 md:translate-x-45 text-[#fcfcfca1] font-normal text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-500`} onClick={() => setCameraPopUp(false)}>DENY</button>
+                                    <Link to="/loadingpic"><button className={`px-5 md:translate-x-45 text-[#fcfcfca1] font-normal text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-300`} >ALLOW</button></Link>
+                                </div>
+                            </div>
+                        </div>
                 <div className="pt-4 md:pt-0 pb-8 bg-white sticky md:static bottom-30.5 mb-0 md:mb-0">
                     <div className="absolute bottom-8 w-full flex justify-between md:px-9 px-13">
-                        <a className="relative" aria-label="Back" href="/page3">
+                        <a className="relative" aria-label="Back" href="/city">
                             <div>
                                 <div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
                                     <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">BACK</span>
@@ -113,4 +116,4 @@ const Page4 = () => {
     );
 };
 
-export default Page4;
+export default Image;
