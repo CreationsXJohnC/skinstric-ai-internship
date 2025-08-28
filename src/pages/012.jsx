@@ -7,8 +7,11 @@ import DiamondMedium from "../assets/Diamond-medium-medium.webp"
 import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 const Demographics = () => {
+    const [isHovering, setIsHovering] = useState(false);
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        setTimeout(() => setIsHovering(true), 200);
     }, []);
 
     return (
@@ -32,7 +35,7 @@ const Demographics = () => {
                 <div className="h-[78.3vh] flex flex-col items-center justify-center bg-white">
                     <div className="relative">
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                            <div className="absolute transition-all duration-400 w-[400px] h-[400px] opacity-0">
+                            <div className={`absolute transition-all duration-400 w-[400px] h-[400px] ${setIsHovering ? "w-[602px] h-[602px] opacity-100" : "w-[400px] h-[400px] opacity-0"}`}>
                                 <img alt="DiamondSmall" loading="lazy" decoding="async" data-nimg="fill" sizes="100vw" style={{position: "absolute", height: "100%", width: "100%", inset: 0, objectFit: "contain", color: "transparent"}} src={DiamondSmall} />
                             </div>
                         </div>
@@ -49,7 +52,7 @@ const Demographics = () => {
                         <div className="relative z-10 grid grid-cols-3 grid-rows-3 gap-0">
                             <div className="flex items-center justify-center col-start-2">
                                 <a href="/results">
-                                    <button className="w-[153.88px] h-[153.88px] bg-gray-200 hover:bg-gray-300 transform rotate-45 flex items-center justify-center -m-5 cursor-pointer font-semibold leading-[24px] tracking-tight uppercase hover:scale-[1.05] transition-transform duration-300">
+                                    <button className="w-[153.88px] h-[153.88px] bg-gray-200 hover:bg-gray-300 transform rotate-45 flex items-center justify-center -m-5 cursor-pointer font-semibold leading-[24px] tracking-tight uppercase hover:scale-[1.05] transition-transform duration-300" style={{transform: setIsHovering ? "w-[602px] h-[602px] opacity-100" : "w-[400px] h-[400px] opacity-0" }}>
                                         <span className="transform -rotate-45">Demographics</span>
                                     </button>
                                 </a>
@@ -74,7 +77,7 @@ const Demographics = () => {
                 </div>
                 <div className="pt-4 md:pt-12 pb-8 bg-white sticky md:static bottom-40 mb-0 md:mb-0">
                     <div className="flex justify-between max-w-full mx-auto px-13 md:px-9">
-                        <a href="/page4">
+                        <a href="/image">
                             <div>
                                 <div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
                                     <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">BACK</span>
@@ -86,7 +89,7 @@ const Demographics = () => {
                                 </div>
                             </div>
                         </a>
-                        <a href="/page6">
+                        <a href="/results">
                             <div>
                                 <div className="w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
                                     <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">SUM</span>

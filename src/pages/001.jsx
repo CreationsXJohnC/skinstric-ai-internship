@@ -8,7 +8,7 @@ import DiamondSmall from "../assets/Diamond-dark-small.webp"
 import CameraIcon from "../assets/camera-icon.webp"
 
 
-const LoadingPic = () => {
+const LoadingCam = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -51,4 +51,4 @@ const LoadingPic = () => {
     );
 };
 
-export default LoadingPic;
+export default LoadingCam;

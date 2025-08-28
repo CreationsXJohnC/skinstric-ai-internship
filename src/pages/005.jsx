@@ -76,7 +76,7 @@ const Image = () => {
                                 <h2 className="text-[#FCFCFC] text-base font-semibold mb-12 leading-[24px] pl-4">ALLOW A.I. TO ACCESS YOUR CAMERA</h2>
                                 <div className="flex mt-4 border-t border-[#FCFCFC] pt-2">
                                     <button className={`px-7 md:translate-x-45 text-[#fcfcfca1] font-normal text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-500`} onClick={() => setCameraPopUp(false)}>DENY</button>
-                                    <Link to="/loadingpic"><button className={`px-5 md:translate-x-45 text-[#fcfcfca1] font-normal text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-300`} >ALLOW</button></Link>
+                                    <Link to="/loadingcam"><button className={`px-5 md:translate-x-45 text-[#fcfcfca1] font-normal text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-300`} >ALLOW</button></Link>
                                 </div>
                             </div>
                         </div>
