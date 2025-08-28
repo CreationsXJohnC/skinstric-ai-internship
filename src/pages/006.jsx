@@ -41,7 +41,7 @@ const Camera = () => {
                         </div>
                     </div>
                     <div className="absolute md:bottom-8 bottom-60 left-8 z-20">
-                        <a href="/result">
+                        <a href="/image">
                             <div>
                                 <div className="relative w-12 h-12 flex items-center justify-center border border-[#FCFCFC] rotate-45 scale-[1] sm:hidden">
                                     <span className="rotate-[-45deg] text-xs font-semibold sm:hidden text-[#FCFCFC]">BACK</span>

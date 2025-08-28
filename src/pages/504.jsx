@@ -8,6 +8,7 @@ import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
 const City = () => {
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

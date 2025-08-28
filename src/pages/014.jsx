@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LeftBracket from "../assets/Rectangle 2710.webp"
 import RightBracket from "../assets/Rectangle 2711.webp"
 import DiamondLarge from "../assets/Diamond-light-large.webp"
@@ -8,8 +8,11 @@ import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
 const InfoLoading = () => {
+    const navigate = useNavigate()
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        setTimeout(() => navigate("/infoloaded"), 3000)
     }, []);
 
     return (

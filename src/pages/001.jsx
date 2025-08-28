@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LeftBracket from "../assets/Rectangle 2710.webp"
 import RightBracket from "../assets/Rectangle 2711.webp"
 import DiamondLarge from "../assets/Diamond-light-large.webp"
@@ -9,8 +9,11 @@ import CameraIcon from "../assets/camera-icon.webp"
 
 
 const LoadingCam = () => {
+    const navigate = useNavigate()
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        setTimeout(() => navigate("/camera"), 3000)
     }, []);
 
     return (

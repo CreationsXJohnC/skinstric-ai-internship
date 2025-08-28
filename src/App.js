@@ -7,6 +7,7 @@ import InfoLoaded from "./pages/505";
 import Image from "./pages/005";
 import LoadingCam from "./pages/001";
 import Camera from "./pages/006";
+import PrepAnalysis from "./pages/007";
 import Demographics from "./pages/012";
 import Results from "./pages/013";
 
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/image" element={<Image />} />
                 <Route path="/loadingcam" element={<LoadingCam />} />
                 <Route path="/camera" element={<Camera />} />
+                <Route path="/prepanalysis" element={<PrepAnalysis />} />
                 <Route path="/demographics" element={<Demographics />} />
                 <Route path="/results" element={<Results />} />
             </Routes>
