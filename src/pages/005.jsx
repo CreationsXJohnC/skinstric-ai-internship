@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import LeftBracket from "../assets/Rectangle 2710.webp"
 import RightBracket from "../assets/Rectangle 2711.webp"
@@ -13,11 +13,28 @@ import ResGalleryLine from "../assets/ResGalleryLine.webp"
 
 const Image = () => {
     const [cameraPopUp, setCameraPopUp] = useState(false)
+    const [previewImage, setPreviewImage] = useState(null);
+    const fileInputRef = useRef(null);
 
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+    
+     const SelectImages = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreviewImage(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
 
     return (
         <div className="main__intro__page">
@@ -56,7 +73,16 @@ const Image = () => {
                         <img alt="DiamondMedium" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute w-[230px] h-[230px] md:w-[444.34px] md:h-[444.34px] animate-spin-slower rotate-195" src={SquareMedium} />
                         <img alt="DiamondSmall" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute w-[190px] h-[190px] md:w-[405.18px] md:h-[405.18px] animate-spin-slowest" src={SquareSmall} />
                         <div className="absolute inset-0 flex flex-col items-center justify-center">
-                            <img alt="Photo Upload Icon" loading="lazy" decoding="async" data-nimg="1" style={{color: "transparent"}} className="absolute w-[100px] h-[100px] md:w-[136px] md:h-[136px] hover:scale-108 duration-700 ease-in-out cursor-pointer" src={GalleryIcon} />
+                            <img
+                                alt="Photo Upload Icon"
+                                loading="lazy"
+                                decoding="async"
+                                data-nimg="1"
+                                style={{ color: "transparent" }}
+                                className="absolute w-[100px] h-[100px] md:w-[136px] md:h-[136px] hover:scale-108 duration-700 ease-in-out cursor-pointer"
+                                src={GalleryIcon}
+                                onClick={SelectImages}
+                            />
                             <div className="absolute top-[75%] md:top-[70%] md:left-[17px] translate-y-[-10px]">
                                 <p className="text-[12px] md:text-[14px] font-normal mt-2 leading-[24px] text-right">
                                     ALLOW A.I. <br /> ACCESS GALLERY
@@ -67,9 +93,23 @@ const Image = () => {
                     </div>
                     <div className="absolute top-[-75px] right-7 md:top-[-50px] md:right-8 transition-opacity duration-300 opacity-100">
                         <h1 className="text-xs md:text-sm font-normal mb-1">Preview</h1>
-                        <div className="w-24 h-24 md:w-32 md:h-32 border border-gray-300 overflow-hidden"></div>
+                        <div className="w-24 h-24 md:w-32 md:h-32 border border-gray-300 overflow-hidden">
+                            {previewImage && (
+                                <img
+                                    src={previewImage}
+                                    alt="Preview"
+                                    className="w-full h-full object-cover"
+                                />
+                            )}
+                        </div>
                     </div>
-                    <input accept="image/*" className="hidden" type="file" />
+                     <input
+                        accept="image/*"
+                        className="hidden"
+                        type="file"
+                        ref={fileInputRef}
+                        onChange={handleFileChange}
+                    />
                 </div>
                 <div className={`absolute md:top-[43%] md:left-[500px] w-[352px] z-50 ${cameraPopUp ? "block" : "hidden"}`}>
                             <div className="bg-[#1A1B1C] pt-4 pb-2">
@@ -94,7 +134,7 @@ const Image = () => {
                                 </div>
                             </div>
                         </a>
-                        <a href="/page5">
+                        <a href="/prepanalysis">
                             <div className="hidden">
                                 <div>
                                     <div className=" w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
