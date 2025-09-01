@@ -41,7 +41,7 @@ const Demographics = () => {
 
         {/* NAVIGATION BUTTONS */}
         <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
-          <a className="inset-0" aria-label="Back" href="/image">
+          <div className="inset-0" aria-label="Back" >
             <div>
               <div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
                 <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">
@@ -61,7 +61,7 @@ const Demographics = () => {
                 </span>
               </div>
             </div>
-          </a>
+          </div>
           <a className="inline-block" href="/results">
             <div
               className="invisible"

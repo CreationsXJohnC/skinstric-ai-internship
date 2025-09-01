@@ -8,8 +8,8 @@ import TakePictureIcon from "../assets/takePictureIcon.webp";
  * Camera component
  * - Requests webcam access (front/selfie camera when available)
  * - Streams video to a <video> element
- * - Captures a still frame to a hidden <canvas> when the TAKE PICTURE button is clicked
- * - Lets user Retake or Use Photo; on Use Photo it uploads to backend then routes
+ * - Captures a still frame to a hidden <canvas> when TAKE PICTURE is clicked
+ * - Lets user Retake or Use Photo; on Use Photo it uploads as JSON (base64) then routes
  */
 const Camera = () => {
   const videoRef = useRef(null);
@@ -32,7 +32,6 @@ const Camera = () => {
     const startCamera = async () => {
       setErrorMsg("");
       try {
-        // Prefer the front-facing camera when available (mobile)
         const constraints = {
           video: {
             facingMode: { ideal: "user" },
@@ -99,87 +98,49 @@ const Camera = () => {
     setPhotoDataUrl("");
   };
 
-  const dataUrlToBlob = (dataUrl) => {
-    const [meta, content] = dataUrl.split(",");
-    const mime = meta.match(/:(.*?);/)[1] || "image/jpeg";
-    const byteStr = atob(content);
-    const len = byteStr.length;
-    const u8 = new Uint8Array(len);
-    for (let i = 0; i < len; i++) u8[i] = byteStr.charCodeAt(i);
-    return new Blob([u8], { type: mime });
-  };
+  // ---- Upload as JSON (base64) ----
+  async function postJsonImage(dataUrl) {
+    // strip "data:image/...;base64," to send raw base64 (most Cloud Functions expect this)
+    const base64 = dataUrl.split(",")[1] ?? dataUrl;
+
+    const payload = { image: base64 };
+    const name = localStorage.getItem("name");
+    if (name) payload.name = name; // optional if your API uses it
+
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const text = await res.text();
+    let json;
+    try {
+      json = JSON.parse(text);
+    } catch {
+      json = null;
+    }
+
+    if (!res.ok || json?.success === false) {
+      // If your backend expects the full data URL instead, uncomment the next block and try again.
+      // throw new Error(json?.message || text || `Upload failed (${res.status})`);
+      throw new Error(json?.message || text || `Upload failed (${res.status})`);
+    }
+  }
 
   const handleUsePhoto = async () => {
     if (!photoDataUrl) return;
     setIsUploading(true);
     setUploadError("");
 
-    const uploadPhotoToApi = async (blob, dataUrl) => {
-      // Attempt 1: multipart/form-data with field name "image"
-      try {
-        const fd1 = new FormData();
-        fd1.append("image", blob, "capture.jpg");
-        const res1 = await fetch(API_URL, { method: "POST", body: fd1 });
-        if (res1.ok) return res1;
-        const t1 = await res1.text();
-        if (![400, 415].includes(res1.status)) {
-          throw new Error(`Upload failed (${res1.status}): ${t1}`);
-        }
-      } catch (e) {
-        // network or CORS error falls through to next attempt
-      }
-
-      // Attempt 2: multipart/form-data with field name "file"
-      try {
-        const fd2 = new FormData();
-        fd2.append("file", blob, "capture.jpg");
-        const res2 = await fetch(API_URL, { method: "POST", body: fd2 });
-        if (res2.ok) return res2;
-        const t2 = await res2.text();
-        if (![400, 415].includes(res2.status)) {
-          throw new Error(`Upload failed (${res2.status}): ${t2}`);
-        }
-      } catch (e) {}
-
-      // Attempt 3: JSON with full data URL in `image`
-      try {
-        const res3 = await fetch(API_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ image: dataUrl, filename: "capture.jpg", mime: "image/jpeg" }),
-        });
-        if (res3.ok) return res3;
-        const t3 = await res3.text();
-        if (![400, 415].includes(res3.status)) {
-          throw new Error(`Upload failed (${res3.status}): ${t3}`);
-        }
-      } catch (e) {}
-
-      // Attempt 4: JSON with base64 only in `image`
-      try {
-        const base64 = (dataUrl.split(",")[1]) || dataUrl;
-        const res4 = await fetch(API_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ image: base64, mime: "image/jpeg", isBase64: true, filename: "capture.jpg" }),
-        });
-        if (res4.ok) return res4;
-        const t4 = await res4.text();
-        throw new Error(`Upload failed (${res4.status}): ${t4}`);
-      } catch (e) {
-        throw e;
-      }
-    };
-
     try {
-      const blob = dataUrlToBlob(photoDataUrl);
-      const res = await uploadPhotoToApi(blob, photoDataUrl);
+      await postJsonImage(photoDataUrl);
 
-      // Route to pre-analysis immediately
-      navigate("/prepanalysis");
+      // Make the image available to /prepanalysis
+      sessionStorage.setItem("uploadedImageDataUrl", photoDataUrl);
 
-      // Then after 3 seconds, route to demographics
-      setTimeout(() => navigate("/demographics"), 3000);
+      // Route to pre-analysis; that page will handle 3s wait + OK + /demographics
+      navigate("/prepanalysis", { state: { previewImage: photoDataUrl } });
     } catch (e) {
       console.error(e);
       setUploadError(e.message || "Upload failed.");
@@ -214,7 +175,7 @@ const Camera = () => {
               className="absolute inset-0 w-full h-full object-cover"
             />
 
-            {/* UI: Take Picture button (wired to the existing image) */}
+            {/* UI: Take Picture button */}
             <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 flex items-center space-x-3">
               <div className="font-semibold text-sm tracking-tight leading-[14px] text-[#FCFCFC] hidden sm:block">
                 TAKE PICTURE
@@ -327,3 +288,4 @@ const Camera = () => {
 };
 
 export default Camera;
+
