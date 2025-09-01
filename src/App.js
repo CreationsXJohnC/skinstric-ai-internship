@@ -6,7 +6,7 @@ import InfoLoading from "./pages/014";
 import InfoLoaded from "./pages/505";
 import Image from "./pages/005";
 import LoadingCam from "./pages/001";
-import Camera from "./pages/006";
+import Camera from "./pages/camera";
 import PrepAnalysis from "./pages/007";
 import Demographics from "./pages/012";
 import Results from "./pages/013";
