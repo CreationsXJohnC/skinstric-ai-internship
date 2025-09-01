@@ -8,9 +8,16 @@ import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
 const Name = () => {
+    const [name, setName] = useState("")
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    function handleSubmit(event) {
+        console.log(event.target.value)
+        setName(event.target.value)
+    }
 
     return (
         <div className="main__intro__page">
@@ -31,7 +38,7 @@ const Name = () => {
                     <p className="text-sm text-gray-400 tracking-wider uppercase mb-1">CLICK TO TYPE</p>
                     <form className="relative z-10">
                         <div className="flex flex-col items-center"></div>
-                        <input className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Introduce Yourself" autoComplete="off" type="text" name="name" />
+                        <input onChange={(event) => handleSubmit(event)} className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Introduce Yourself" autoComplete="off" type="text" name="name" />
                         <Link to="/city"> <button type="submit" className="sr-only">Submit</button> </Link>
                     </form>
                     <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />

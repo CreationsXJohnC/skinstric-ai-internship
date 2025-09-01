@@ -8,10 +8,16 @@ import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
 const City = () => {
+    const [city, setCity] = useState("")
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    function handleSubmit(event) {
+        console.log(event.target.value)
+        setCity(event.target.value)
+    }
 
     return (
         <div className="main__intro__page">
@@ -32,7 +38,7 @@ const City = () => {
                     <p className="text-sm text-gray-400 tracking-wider uppercase mb-1">CLICK TO TYPE</p>
                     <form className="relative z-10">
                         <div className="flex flex-col items-center"></div>
-                        <input className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Your City Name" autoComplete="off" type="text" name="name" />
+                        <input onChange={(event) => handleSubmit(event)} className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Your City Name" autoComplete="off" type="text" name="name" />
                         <Link to="/infoloading"><button type="submit" className="sr-only">Submit</button></Link>
                     </form>
                     <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
@@ -40,7 +46,7 @@ const City = () => {
                     <img alt="Diamond Small" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[320px] h-[320px] md:w-[602px] md:h-[602px] animate-spin-slowest color:transparent" src={DiamondSmall} />
                 </div>
                 <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
-                    <a className="inset-0" aria-label="Back" href="/">
+                    <div className="inset-0" aria-label="Back" >
                         <div>
                             <div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
                                 <span className="rotate-[-45deg] text-xs font-semibold sm:hidden">BACK</span>
@@ -51,7 +57,7 @@ const City = () => {
                                 <span className="text-sm font-semibold hidden sm:block ml-6">BACK</span>
                             </div>
                         </div>
-                    </a>
+                    </div>
                     <a className="inline-block" href="/infoloading">
                         <div className="invisible" style={{position: "relative",translate: "none",rotate: "none",scale: "none",visibility: "visible",opacity: 1,transform: "translate(0px, 0%)"}} >
                             <div>
