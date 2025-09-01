@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LeftBracket from "../assets/Rectangle 2710.webp"
 import RightBracket from "../assets/Rectangle 2711.webp"
 import DiamondLarge from "../assets/Diamond-light-large.webp"
@@ -8,10 +8,14 @@ import DiamondSmall from "../assets/Diamond-dark-small.webp"
 
 
 const City = () => {
+    const location = useLocation()
+    const {name} = location.state || {}
+
     const [city, setCity] = useState("")
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        console.log(name)
     }, []);
 
     function handleSubmit(event) {
