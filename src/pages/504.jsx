@@ -15,13 +15,38 @@ const City = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        console.log(name)
+        if (name) {console.log(name)}
     }, []);
 
-    function handleSubmit(event) {
+    function handleCity(event) {
         console.log(event.target.value)
         setCity(event.target.value)
     }
+
+    const handleSubmit = async () => {
+        if (!validateInput()) {
+            setError('Please enter valid location (letters only).');
+            return;
+        }
+
+        const name = localStroage.getItem('name');
+
+        if(!name) {
+            setError('Name is missing. Please go back and enter your name.');
+            return;
+        }
+
+        try {
+            const response = await fetch(
+                'https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne',
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, location }),
+                }
+            )
+        }
+    };
 
     return (
         <div className="main__intro__page">
@@ -42,7 +67,7 @@ const City = () => {
                     <p className="text-sm text-gray-400 tracking-wider uppercase mb-1">CLICK TO TYPE</p>
                     <form className="relative z-10">
                         <div className="flex flex-col items-center"></div>
-                        <input onChange={(event) => handleSubmit(event)} className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Your City Name" autoComplete="off" type="text" name="name" />
+                        <input onChange={(event) => handleCity(event)} className="text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] sm:w-[432px] pt-1 tracking-[-0.07em] leading-[64px] text-[#1A1B1C] z-10" placeholder="Your City Name" autoComplete="off" type="text" name="name" />
                         <Link to="/infoloading"><button type="submit" className="sr-only">Submit</button></Link>
                     </form>
                     <img alt="Diamond Large" loading="lazy" decoding="async" data-nimg="1" className="absolute w-[480px] h-[480px] md:w-[762px] md:h-[762px] animate-spin-slow rotate-190 color:transparent" src={DiamondLarge} />
