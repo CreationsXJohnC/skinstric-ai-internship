@@ -114,21 +114,66 @@ const Camera = () => {
     setIsUploading(true);
     setUploadError("");
 
+    const uploadPhotoToApi = async (blob, dataUrl) => {
+      // Attempt 1: multipart/form-data with field name "image"
+      try {
+        const fd1 = new FormData();
+        fd1.append("image", blob, "capture.jpg");
+        const res1 = await fetch(API_URL, { method: "POST", body: fd1 });
+        if (res1.ok) return res1;
+        const t1 = await res1.text();
+        if (![400, 415].includes(res1.status)) {
+          throw new Error(`Upload failed (${res1.status}): ${t1}`);
+        }
+      } catch (e) {
+        // network or CORS error falls through to next attempt
+      }
+
+      // Attempt 2: multipart/form-data with field name "file"
+      try {
+        const fd2 = new FormData();
+        fd2.append("file", blob, "capture.jpg");
+        const res2 = await fetch(API_URL, { method: "POST", body: fd2 });
+        if (res2.ok) return res2;
+        const t2 = await res2.text();
+        if (![400, 415].includes(res2.status)) {
+          throw new Error(`Upload failed (${res2.status}): ${t2}`);
+        }
+      } catch (e) {}
+
+      // Attempt 3: JSON with full data URL in `image`
+      try {
+        const res3 = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({ image: dataUrl, filename: "capture.jpg", mime: "image/jpeg" }),
+        });
+        if (res3.ok) return res3;
+        const t3 = await res3.text();
+        if (![400, 415].includes(res3.status)) {
+          throw new Error(`Upload failed (${res3.status}): ${t3}`);
+        }
+      } catch (e) {}
+
+      // Attempt 4: JSON with base64 only in `image`
+      try {
+        const base64 = (dataUrl.split(",")[1]) || dataUrl;
+        const res4 = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({ image: base64, mime: "image/jpeg", isBase64: true, filename: "capture.jpg" }),
+        });
+        if (res4.ok) return res4;
+        const t4 = await res4.text();
+        throw new Error(`Upload failed (${res4.status}): ${t4}`);
+      } catch (e) {
+        throw e;
+      }
+    };
+
     try {
       const blob = dataUrlToBlob(photoDataUrl);
-      const form = new FormData();
-      // Backend can change the field name if needed; "file" is a common default
-      form.append("file", blob, "capture.jpg");
-
-      const res = await fetch(API_URL, {
-        method: "POST",
-        body: form,
-      });
-
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Upload failed (${res.status}): ${text}`);
-      }
+      const res = await uploadPhotoToApi(blob, photoDataUrl);
 
       // Route to pre-analysis immediately
       navigate("/prepanalysis");
